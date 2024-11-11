@@ -108,7 +108,7 @@ export default function Slider() {
         </Swiper>
       </div>
       <div 
-      className="md:container pb-24 relative md:pb-0 h-fit px-4 md:absolute right-0 left-0 my-0 mx-auto top-28 md:top-32 2xl:top-52 text-left  text-white">
+      className="md:container pb-24 relative md:pb-0 h-fit px-8 md:px-4 md:absolute right-0 left-0 my-0 mx-auto top-28 md:top-32 2xl:top-52 text-left  text-white">
         <span className="uppercase relative z-[11] font-raleway leading-tight block text-heading-small md:text-heading-large font-black mb-28 md:mb-16">
           More from <br /> Rico the dog
         </span>

@@ -33,7 +33,7 @@ export function useDevice(args: "tablet-landscape" | null = null) {
 
   useEffect(() => {
     setDevice(getDevice(args));
-  }, []);
+  }, [args]);
 
   useEffect(() => {
     const onResize = () => {
@@ -46,13 +46,13 @@ export function useDevice(args: "tablet-landscape" | null = null) {
     window.addEventListener("resize", onResize);
 
     return () => window.removeEventListener("resize", onResize);
-  }, [setDevice]);
+  }, [setDevice, args]);
 
   useEffect(() => {
     if (device !== currentDevice) {
       setCurrentDevice(device);
     }
-  }, [device]);
+  }, [device, currentDevice]);
 
   return currentDevice;
 }
