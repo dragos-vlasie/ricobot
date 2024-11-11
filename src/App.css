@@ -103,7 +103,7 @@ div button.swiper-pagination-bullet-active {
 }
 
 .foreground-image {
-  height: calc(100% + 20px);
+  height: calc(100% + 40px);
 }
 
 .swiper-pagination {
