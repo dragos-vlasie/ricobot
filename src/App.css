@@ -1,38 +1,237 @@
-.App {
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#app {
+  height: 100%;
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+  background: #09101a;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.mySwiper.swiper {
+  width: 100%;
+  height: 100%;
+  padding-top: 60px;
+  position: absolute;
+  z-index: 1;
+  min-height: 400px;
+}
+
+.swiper-slide {
   text-align: center;
-}
+  font-size: 18px;
+  background: #fff;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.swiper-slide img {
+  display: block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.swiper-pagination-bullet::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 30%);
+  z-index: 2;
+}
+
+.swiper-pagination-bullet {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  color: #000;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.swiper-pagination-bullet-active {
+  color: #fff;
+  background: #007aff;
+}
+
+.swiper-pagination-bullet-active::after {
+  background: none;
+}
+
+div button.swiper-pagination-bullet-active {
+  border: 6px solid;
+  width: 140px;
+  height: 140px;
+  background: none;
+  padding: 0.2rem;
+
+  position: relative;
+  background: black;
+  border: 4px solid #ccc;
+  border-radius: 18px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.swiper-pagination {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.swiper-pagination-bullet {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.foreground-image {
+  height: calc(100% + 20px);
+}
+
+.swiper-pagination {
+  width: 100%;
+  z-index: 1000;
+  margin-left: auto;
+  margin-right: auto;
+  right: 0;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.gradient-overlay {
+  position: relative;
+}
+
+.gradient-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to left, rgba(37, 45, 55, 0) 40%, /* #000000 72.92%, */ #000000 100%, #09101a 100%);
+  z-index: 1;
+}
+
+.gradient-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 25%, #000000 100%);
+  z-index: 2;
+}
+
+@media (min-width: 640px) {
+  .swiper-pagination {
+    max-width: 640px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (min-width: 768px) {
+  .foreground-image {
+    height: calc(100% + 90px);
+  }
+
+  .gradient-overlay::after {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 75%, #000000 100%);
+    z-index: 2;
+  }
+
+  .mySwiper.swiper {
+    width: 100%;
+    height: calc(100vh + 90px);
+    padding-top: 90px;
+    position: relative;
+    min-height: 730px; /* Match max-height of the content */
+  }
+
+  div button.swiper-pagination-bullet-active {
+    border: 6px solid;
+    height: 100px;
+    width: 100px;
+    background: none;
+    padding: 0.4rem;
+
+    position: relative;
+    background: black;
+    border: 4px solid #ccc;
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  button.swiper-pagination-bullet {
+    width: 80px;
+    height: 80px;
+  }
+
+  .swiper-pagination {
+    max-width: 768px;
+    display: flex;
+    align-items: end;
+    gap: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .swiper-pagination {
+    max-width: 1024px;
+    gap: 28px;
+  }
+
+  button.swiper-pagination-bullet {
+    width: 120px;
+    height: 120px;
+  }
+
+  div button.swiper-pagination-bullet-active {
+    border: 6px solid;
+    width: 160px;
+    height: 160px;
+    background: none;
+    padding: 0.7rem;
+
+    position: relative;
+    background: black;
+    border: 4px solid #ccc;
+    border-radius: 18px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 1280px) {
+  .swiper-pagination {
+    max-width: 1280px;
+  }
+
+  div button.swiper-pagination-bullet-active {
+    width: 200px;
+    height: 200px;
+  }
+
+  button.swiper-pagination-bullet {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .swiper-pagination {
+    max-width: 1536px;
   }
 }
