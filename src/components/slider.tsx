@@ -135,7 +135,7 @@ export default function Slider() {
             <button
               key={index}
               onClick={() => navigateToSlide(index)}
-              className={`${activeIndex === index ? "border scale-110 rounded-md p-[2px] md:min-w-36 md:min-h-36" : ""}`}
+              className={`${activeIndex === index ? "border-2 scale-110 rounded-md p-1 md:min-w-36 md:min-h-36" : ""}`}
             >
               <img src={`${images[index].thumbnail}`} alt={images[index].alt} className="w-full h-full rounded-md  cursor-pointer object-cover" />
             </button>
