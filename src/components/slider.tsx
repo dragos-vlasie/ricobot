@@ -67,7 +67,7 @@ export default function Slider() {
   };
 
   return (
-    <div className="pb-28 bg-white">
+    <div className="bg-white">
       <div className="relative">
         <Swiper
           ref={swiperRef}

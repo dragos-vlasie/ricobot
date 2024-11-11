@@ -157,7 +157,7 @@ div button.swiper-pagination-bullet-active {
     height: calc(100vh + 90px);
     padding-top: 90px;
     position: relative;
-    min-height: 730px; /* Match max-height of the content */
+    min-height: 750px; /* Match max-height of the content */
   }
 
   div button.swiper-pagination-bullet-active {
